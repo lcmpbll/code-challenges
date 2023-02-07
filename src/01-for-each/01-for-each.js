@@ -13,7 +13,7 @@ export function greeting(message) {
 }
 
 export const speaker = (message, callback) => {
-    // Solution code here...
+    return callback(message);
 };
 
 /* ------------------------------------------------------------------------------------------------
