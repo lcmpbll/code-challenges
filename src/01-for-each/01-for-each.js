@@ -77,7 +77,8 @@ CHALLENGE 4
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 export const removeWithForEach = (arr, callback) => {
-    // Solution code here...
+    arr.forEach(num => callback(num, arr));
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
