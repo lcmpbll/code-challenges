@@ -8,7 +8,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 export const appendTheEnd = (str) => {
-  // Solution code here...
+    let newStr = str.append('The end.');
+    return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
