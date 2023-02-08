@@ -27,7 +27,7 @@ console.log(a) prints [1, 2, 3, 1]
 
 export const appendFirstToLast = (arr) => {
 
-    arr.append(arr[0]);
+    arr.push(arr[0]);
 
 };
 
