@@ -56,7 +56,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 export const alphabetizeBetter = (arr) => {
     arr.sort((a, b) => {
-        return a.toUpperCase() < b.toUpperCase();
+        a.toUpperCase() < b.toUpperCase();
     });
     return arr;
     
@@ -89,7 +89,10 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 export const sortNumbersByLength = (arr) => {
-  // Solution code here...
+    arr.sort((a, b) => {
+        return a.length - b.length;
+    });
+    return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
