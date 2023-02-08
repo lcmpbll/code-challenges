@@ -64,7 +64,9 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 export const setStatusAsAuthor = (people) => {
-  // Solution code here...
+    people.forEach((person) => {
+        person.isAuthor = true;
+    });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,5 +85,7 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 export const append = (arr1, arr2) => {
-  // Solution code here...
+    arr2.forEach((num) => {
+        arr1.push(num);
+    });
 };
