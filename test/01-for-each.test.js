@@ -11,7 +11,7 @@ import {
     fizzBuzz
 } from '../src/01-for-each/01-for-each.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('01 forEach');
 
@@ -73,7 +73,7 @@ test('It should only add the available items to the list', assert => {
 });
   
     
-skip('It should print out messages or numbers according to fizz buzz rules', assert => {
+test('It should print out messages or numbers according to fizz buzz rules', assert => {
     const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     const outputs = fizzBuzz(inputs);
     assert.deepEqual(outputs, [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
