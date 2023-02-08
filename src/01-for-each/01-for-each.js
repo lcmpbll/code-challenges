@@ -119,7 +119,13 @@ This function should create another new array (the grocery list) and then use fo
 ------------------------------------------------------------------------------------------------ */
 
 export const createList = (arr) => {
-    // Solution code here...
+    let groceryList = [];
+    arr.forEach((item) => {
+        if(item.available === true){
+            groceryList.push(item.name);
+        }
+    });
+    return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
