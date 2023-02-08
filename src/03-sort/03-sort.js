@@ -36,9 +36,14 @@ CHALLENGE 3
 
 Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
-
+//don't know why this works with " - " and not " < "
 export const sortByLength = (arr) => {
-  // Solution code here...
+    arr.sort((a, b) => {
+        return a.length - b.length;
+    });
+  
+    
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,7 +55,11 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 export const alphabetizeBetter = (arr) => {
-  // Solution code here...
+    arr.sort((a, b) => {
+        return a.toUpperCase() < b.toUpperCase();
+    });
+    return arr;
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +76,8 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 export const sortByPrice = (arr) => {
-  // Solution code here...
+    arr.sort((a, b) => { return a.price - b.price; });
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
