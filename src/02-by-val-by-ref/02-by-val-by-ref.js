@@ -8,8 +8,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 export const appendTheEnd = (str) => {
-    let newStr = str.append('The end.');
-    return newStr;
+    let newStr = str;
+    return newStr.concat(' The end.');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +26,9 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 export const appendFirstToLast = (arr) => {
-    arr.append(arr[1]);
+
+    arr.append(arr[0]);
+
 };
 
 /* ------------------------------------------------------------------------------------------------

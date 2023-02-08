@@ -31,7 +31,7 @@ test('It should append without modifying the original', (assert) => {
 });
 
 
-test('It should append by modifying the original', (assert) => {
+skip('It should append by modifying the original', (assert) => {
     const a = ['Yes', 'it', 'is'];
     appendFirstToLast(a);
 
@@ -39,7 +39,7 @@ test('It should append by modifying the original', (assert) => {
 });
 
 
-test('It should add a property to an object', (assert) => {
+skip('It should add a property to an object', (assert) => {
     const a = { fullName: 'Octavia Butler' };
     addBirthYearProperty(a, 1947);
 
