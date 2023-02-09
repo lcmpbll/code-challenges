@@ -102,11 +102,14 @@ Write a function named sortPeople that takes in an array of Person objects, each
 ------------------------------------------------------------------------------------------------ */
 
 export class Person {
-  // Solution code here...
+  
 }
 
 export const sortPeople = (arr) => {
-  // Solution code here...
+    arr.sort((a, b) => {
+        a.lastName - b.lastName;
+    });
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
