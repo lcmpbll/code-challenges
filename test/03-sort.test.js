@@ -10,7 +10,7 @@ import {
     Person
 } from '../src/03-sort/03-sort.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('03 Sort');
 
@@ -48,7 +48,7 @@ test('It should sort strings by length', assert => {
     assert.deepEqual(sortByLength([]), []);
 });
 
-skip('It should alphabetize without regard to capitalization', assert => {
+test('It should alphabetize without regard to capitalization', assert => {
     const result = alphabetizeBetter(['Alice', 'apple', 'alert', 'Average']);
     assert.deepEqual(result, ['alert', 'Alice', 'apple', 'Average']);
     const result2 = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
@@ -101,7 +101,7 @@ test('It should sort people by their last names', assert => {
     );
 });
 
-skip('It should sort people with more strict ordering', assert => {
+test('It should sort people with more strict ordering', assert => {
 
     const family = [
         new Person('Casey', 'Casems', 55),
