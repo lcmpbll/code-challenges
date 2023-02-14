@@ -13,7 +13,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 export const isNum = (input) => {
-  // Solution code here...
+    const regex = /[0-9]/;
+    return regex.test(input);
+  
 
 };
 
