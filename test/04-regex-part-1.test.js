@@ -29,11 +29,11 @@ test('It should return true if the input is a number', assert => {
     assert.ok(isNum('12345'));
 });
 
-skip('It should return true if the input contains a number', assert => {
+test('It should return true if the input contains a number', assert => {
     assert.ok(isNum('h3llo w0rld'));
 });
 
-skip('It should return false if the input does not contain a number', assert => {
+test('It should return false if the input does not contain a number', assert => {
     assert.notOk(isNum('hello world'));
     assert.notOk(isNum(''));
 });
