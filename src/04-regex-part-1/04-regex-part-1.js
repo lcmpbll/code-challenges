@@ -69,7 +69,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 export const matchMonth = (input) => {
-  // Solution code here...
+    let regex = /(Oct)/i;
+    return regex.test(input);
 
 };
 

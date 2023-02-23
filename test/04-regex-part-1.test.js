@@ -69,7 +69,7 @@ test('It should not return the cities whose names begin with the letters K throu
     });
 });
 
-skip('It should match any of the acceptable inputs', assert => {
+test('It should match any of the acceptable inputs', assert => {
     assert.ok(matchMonth('Oct'));
     assert.ok(matchMonth('oct'));
     assert.ok(matchMonth('October'));
