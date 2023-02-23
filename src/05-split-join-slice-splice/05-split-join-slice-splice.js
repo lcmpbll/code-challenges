@@ -50,7 +50,18 @@ Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
 
 export const listFoods = (recipe) => {
-    // Solution code here...
+    const ingredientsArray = recipe.ingredients;
+    if(recipe.ingredients !== undefined){
+        
+        let endOfFood = [];
+        for(let i = 0; i <= ingredientsArray.length; i ++){
+            endOfFood.push(ingredientsArray[i].slice(ingredientsArray[i].indexOf(' ', 2) + 1));
+        }
+        console.log(endOfFood);
+        return endOfFood;
+    } else {
+        return undefined;
+    }
 };
 
 /* ------------------------------------------------------------------------------------------------

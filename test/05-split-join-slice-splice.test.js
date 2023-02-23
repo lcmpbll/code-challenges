@@ -35,7 +35,7 @@ test('It should return a list of shortening words', assert => {
     assert.deepEqual(howMuchPencil('abc'), ['abc', 'bc', 'c', '']);
 });
 
-skip('It should return an array of individual letters', assert => {
+test('It should return an array of individual letters', assert => {
     assert.deepEqual(wordsToCharList('Gregor'), ['G', 'r', 'e', 'g', 'o', 'r']);
     assert.deepEqual(wordsToCharList('hooray'), ['h', 'o', 'o', 'r', 'a', 'y']);
     assert.deepEqual(wordsToCharList(''), []);
@@ -69,7 +69,7 @@ const gruffaloCrumble = {
     ]
 };
 
-skip('It should return a list of foods', assert => {
+test('It should return a list of foods', assert => {
     assert.deepEqual(
         listFoods(gruffaloCrumble), 
         ['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']
