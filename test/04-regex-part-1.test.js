@@ -76,7 +76,7 @@ test('It should match any of the acceptable inputs', assert => {
     assert.ok(matchMonth('october'));
 });
 
-skip('It should not match anything other than the acceptable inputs', assert => {
+test('It should not match anything other than the acceptable inputs', assert => {
     assert.notOk(matchMonth('November'));
     assert.notOk(matchMonth('nov'));
     assert.notOk(matchMonth(123));

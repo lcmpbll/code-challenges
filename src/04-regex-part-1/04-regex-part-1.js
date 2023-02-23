@@ -69,7 +69,13 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 export const matchMonth = (input) => {
-    let regex = /(Oct)/i;
+    if(typeof(input) !== 'string'){
+        return false;
+    }
+    let regex = /^[Oo](ctober)/;
+    if(input.length === 3){
+        regex = /^[Oo](ct)/;
+    }
     return regex.test(input);
 
 };
@@ -85,7 +91,10 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 export const noPunctuation = str => {
-  // Solution code here...
+    let regex = /w\b\s/;
+    let wordNoPunctuation = regex.match(str);
+    return wordNoPunctuation;
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
