@@ -8,7 +8,7 @@ import {
     findShells
 } from '../src/04-regex-part-1/04-regex-part-1.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('04 Regex Part 1');
 
@@ -126,7 +126,7 @@ test('It should not contain the letters "a", "e", "i", "o", or "u"', assert => {
     });
 });
 
-skip('It should return an array of instances of "sells", shells", and "seashells"', assert => {
+test('It should return an array of instances of "sells", shells", and "seashells"', assert => {
     const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
     const foundShells = findShells(seashells);
     assert.deepEqual(foundShells, ['sells', 'seashells', 'shells', 'sells', 'seashells', 'sells', 'shells', 'sells', 'shells']);

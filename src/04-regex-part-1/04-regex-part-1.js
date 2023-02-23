@@ -130,5 +130,7 @@ Hint: All of these words end with the letters "ells".
 ------------------------------------------------------------------------------------------------ */
 
 export const findShells = (str) => {
-  // Solution code here...
+    let regex = /\b\w*(ells)/g; 
+    let shells = str.match(regex);
+    return shells;
 };
