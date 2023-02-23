@@ -91,8 +91,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 export const noPunctuation = str => {
-    let regex = /w\b\s/;
-    let wordNoPunctuation = regex.match(str);
+    let regex = /\b\w*\b\s/g;
+    let wordNoPunctuation = str.match(regex);
     return wordNoPunctuation;
     
 };

@@ -87,7 +87,7 @@ test('It should not match anything other than the acceptable inputs', assert => 
 
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.';
 
-skip('It should only return words that are immediately followed by a space', assert => {
+test('It should only return words that are immediately followed by a space', assert => {
     assert.deepEqual(
         noPunctuation(lorem),
         ['Lorem ', 'ipsum ', 'dolor ', 'sit ', 'consectetur ', 'adipiscing ', 'Cras ', 'lacinia ', 'vel ', 'massa ', 'sed ', 'Nunc ', 'faucibus ', 'iaculis ', 'a ', 'scelerisque ', 'enim ', 'condimentum ', 'Aenean ', 'ac ', 'scelerisque ', 'et ', 'pharetra ']
