@@ -46,10 +46,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 export const citiesAtoJ = (arr) => {
     // let regex = /\b\[A-Ja-j]\w*\b/g;
-    let regex = /[A-J]\w*/g;
+    let regex = /^[A-J]/;
     let aToJCities = [];
     for(let i = 0; i <= arr.length; i ++){
-        if(regex.test(arr)){
+        if(regex.test(arr[i])){
             aToJCities.push(arr[i]);
         }
     }
