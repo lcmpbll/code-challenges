@@ -107,7 +107,7 @@ test('It should not contain words that are followed by any non-space character',
 
 const startString = 'This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!';
 
-skip('It should remove the vowels from the hangman string and replace them with underscores', assert => {
+test('It should remove the vowels from the hangman string and replace them with underscores', assert => {
     assert.equal(
         hangman(startString), 
         'Th_s _s _ r_g_x ch_ll_ng_. W_ _r_ try_ng t_ cr__t_ _ h_ngm_n phr_s_ wh_r_ _ll _f th_ v_w_ls _r_ m_ss_ng!'
@@ -119,7 +119,7 @@ skip('It should remove the vowels from the hangman string and replace them with 
     );
 });
 
-skip('It should not contain the letters "a", "e", "i", "o", or "u"', assert => {
+test('It should not contain the letters "a", "e", "i", "o", or "u"', assert => {
     const result = hangman(startString);
     ['a', 'e', 'i', 'o', 'u'].forEach(vowel => {
         assert.notOk(result.includes(vowel));
