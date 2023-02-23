@@ -62,7 +62,7 @@ test('It should return the cities whose names begin with the letters A through J
     );
 });
 
-skip('It should not return the cities whose names begin with the letters K through Z', assert => {
+test('It should not return the cities whose names begin with the letters K through Z', assert => {
     const kToZCities = ['San Diego', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Newport Beach'];
     citiesAtoJ(cities).forEach(city => {
         assert.notOk(kToZCities.includes(city));
