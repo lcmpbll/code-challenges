@@ -98,7 +98,7 @@ test('It should only return words that are immediately followed by a space', ass
     );
 });
 
-skip('It should not contain words that are followed by any non-space character', assert => {
+test('It should not contain words that are followed by any non-space character', assert => {
     const badWords = ['amet,', 'elit.', 'egestas.', 'elit,', 'sed.', 'sem,', 'diam.', 'nibh.', 'porttitor.', 'euismod,', 'ultrices.', 'massa,', 'vel,', 'purus.', 'purus,', 'odio.', 'aliquet,', 'non,', 'sem.'];
     noPunctuation(lorem).forEach(word => {
         assert.notOk(badWords.includes(word));
