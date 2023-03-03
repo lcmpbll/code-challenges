@@ -83,7 +83,7 @@ test('It should return a list of foods', assert => {
     );
 });
 
-skip('It should return a list of recipe steps', assert => {
+test('It should return a list of recipe steps', assert => {
     assert.deepEqual(
         stepActions(gruffaloCrumble), 
         ['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']

@@ -115,7 +115,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 ------------------------------------------------------------------------------------------------ */
 
 export const stepActions = (recipe) => {
-    // Solution code here...
+    let steps = recipe.steps;
+    let actions = [];
+    for(let i = 0; i < steps.length; i ++){
+        actions.push(steps[i].slice(0, steps[i].indexOf(' ')));
+    }
+    return actions;
 };
 
 /* ------------------------------------------------------------------------------------------------
