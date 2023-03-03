@@ -76,7 +76,7 @@ test('It should return a list of foods', assert => {
     );
 });
 
-skip('It should return a list of foods', assert => {
+test('It should return a list of foods', assert => {
     assert.deepEqual(
         splitFoods(gruffaloCrumble),
         ['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']

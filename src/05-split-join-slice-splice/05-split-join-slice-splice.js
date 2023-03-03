@@ -62,7 +62,7 @@ export const listFoods = (recipe) => {
             let ingredientOnly = ingredientsArray[i].slice(spotNumTwo + 1);
             endOfFood.push(ingredientOnly);
         }
-        console.log(endOfFood);
+        
     }
     
     return endOfFood;
@@ -79,8 +79,29 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 export const splitFoods = (recipe) => {
-    const ingredientsArray = recipe.ingredients.split();
-    console.log(ingredientsArray);
+    const ingredientsArray = recipe.ingredients;
+    let onlyIngredients = [];
+    for(let i = 0; i <= ingredientsArray.length; i ++){
+        if(ingredientsArray[i] !== undefined){
+            let ingredients = ingredientsArray[i].split(' ');
+            if(ingredients.length === 3){
+                onlyIngredients.push(ingredients[2]);
+            } else if(ingredients.length === 4){
+                let ingredient = ingredients[2] + ' ' + ingredients[3];
+                onlyIngredients.push(ingredient);
+                
+            } else if(ingredients.length === 5){
+                let ingredient = ingredients[2] + ' ' + ingredients[3] + ' ' + ingredients[4];
+                onlyIngredients.push(ingredient);
+            }
+            
+            
+            
+           
+        }
+    }
+    return onlyIngredients;
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
