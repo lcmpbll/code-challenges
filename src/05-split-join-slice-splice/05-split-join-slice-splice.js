@@ -51,17 +51,23 @@ Do not use split for this function.
 
 export const listFoods = (recipe) => {
     const ingredientsArray = recipe.ingredients;
-    if(recipe.ingredients !== undefined){
+    
         
-        let endOfFood = [];
-        for(let i = 0; i <= ingredientsArray.length; i ++){
-            endOfFood.push(ingredientsArray[i].slice(ingredientsArray[i].indexOf(' ', 2) + 1));
+    let endOfFood = [];
+    for(let i = 0; i <= ingredientsArray.length; i ++){
+        if(ingredientsArray[i] !== undefined){
+            let spot = ingredientsArray[i].indexOf(' ');
+            let spotNumTwo = ingredientsArray[i].indexOf(' ', spot + 1);
+        
+            let ingredientOnly = ingredientsArray[i].slice(spotNumTwo + 1);
+            endOfFood.push(ingredientOnly);
         }
         console.log(endOfFood);
-        return endOfFood;
-    } else {
-        return undefined;
     }
+    
+    return endOfFood;
+  
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,7 +79,8 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 export const splitFoods = (recipe) => {
-    // Solution code here...
+    const ingredientsArray = recipe.ingredients.split();
+    console.log(ingredientsArray);
 };
 
 /* ------------------------------------------------------------------------------------------------
