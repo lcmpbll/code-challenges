@@ -116,7 +116,7 @@ test('It should return an empty string when called with a number larger than the
     assert.equal(removeLastCharacters('a', 1), '');
 });
 
-skip('It should add up the numbers contained within the string', assert => {
+test('It should add up the numbers contained within the string', assert => {
     assert.equal(totalSumCSV('1,4,5,7,2'), 19);
     assert.equal(totalSumCSV('147'), 147);
 });
