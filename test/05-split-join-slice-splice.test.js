@@ -101,16 +101,16 @@ test('It should remove the even numbers from the array', assert => {
 });
 
 
-skip('It should shorten the string based on the first argument', assert => {
+test('It should shorten the string based on the first argument', assert => {
     assert.equal(removeLastCharacters('Gregor', 2), 'Greg');
 });
 
-skip('It should return the complete string when passed a negative number', assert => {
+test('It should return the complete string when passed a negative number', assert => {
     assert.equal(removeLastCharacters('hello', -1), 'hello');
     assert.equal(removeLastCharacters('wowow', -700), 'wowow');
 });
 
-skip('It should return an empty string when called with a number larger than the string length', assert => {
+test('It should return an empty string when called with a number larger than the string length', assert => {
     assert.equal(removeLastCharacters('hello', 12), '');
     assert.equal(removeLastCharacters('', 1), '');
     assert.equal(removeLastCharacters('a', 1), '');

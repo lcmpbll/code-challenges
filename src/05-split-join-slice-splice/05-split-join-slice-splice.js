@@ -145,7 +145,7 @@ export const removeEvenValues = (arr) => {
             i -= 1;
         }
     }
-    console.log(arr);
+    
     return arr;
 };
 
@@ -165,7 +165,21 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 export const removeLastCharacters = (str, numberOfCharacters) => {
-    // Solution code here...
+    let answer = null;
+    if(numberOfCharacters < 0){
+        answer = str;
+        console.log(answer);
+        return answer;
+    } else if(numberOfCharacters > str.length){
+        answer = '';
+        
+    } else {
+        answer = str.slice(0, str.length - numberOfCharacters); 
+        console.log(answer);
+        
+    }
+    return answer;
+    
 };
 
 
