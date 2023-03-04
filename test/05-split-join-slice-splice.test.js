@@ -11,7 +11,7 @@ import {
     extractVowels
 } from '../src/05-split-join-slice-splice/05-split-join-slice-splice.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('05 split join slice splice');
 
@@ -127,7 +127,7 @@ test('It should return the string without vowels', assert => {
     assert.equal(removeVowels('why'), 'why');
 });
 
-skip('It should return the string without vowels', assert => {
+test('It should return the string without vowels', assert => {
     assert.deepEqual(extractVowels('gregor'), ['grgr', 'eo']);
     assert.deepEqual(extractVowels('The quick brown fox'), ['Th qck brwn fx', 'eioou']);
 });
