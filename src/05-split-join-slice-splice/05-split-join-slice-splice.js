@@ -168,14 +168,14 @@ export const removeLastCharacters = (str, numberOfCharacters) => {
     let answer = null;
     if(numberOfCharacters < 0){
         answer = str;
-        console.log(answer);
+       
         return answer;
     } else if(numberOfCharacters > str.length){
         answer = '';
         
     } else {
         answer = str.slice(0, str.length - numberOfCharacters); 
-        console.log(answer);
+      
         
     }
     return answer;
@@ -206,7 +206,16 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 export const removeVowels = (str) => {
-    // Solution code here...
+    const arr = str.split('');
+    let noVowelArr = [];
+    const regex = /[aeiou]/;
+    for(let i = 0; i < arr.length; i ++){
+        if(arr[i].match(regex) === null){
+            noVowelArr.push(arr[i]); 
+        } 
+    }
+    let noVowelStr = noVowelArr.join('');
+    return noVowelStr;
 };
 
 /* ------------------------------------------------------------------------------------------------

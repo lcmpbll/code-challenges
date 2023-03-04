@@ -121,7 +121,7 @@ test('It should add up the numbers contained within the string', assert => {
     assert.equal(totalSumCSV('147'), 147);
 });
 
-skip('It should return the string without vowels', assert => {
+test('It should return the string without vowels', assert => {
     assert.equal(removeVowels('gregor'), 'grgr');
     assert.equal(removeVowels('asdf'), 'sdf');
     assert.equal(removeVowels('why'), 'why');
