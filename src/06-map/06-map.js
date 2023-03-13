@@ -112,5 +112,11 @@ Here is an example of a single array element: { name: 'speed', total: 35 }
 ------------------------------------------------------------------------------------------------ */
 
 export const extractStats = (arr) => {
-  // Solution code here...
+    let statsArray = [];
+    
+    arr.map(n => {
+        let obj = { name: n.stat.name, total: n.effort + n.baseStat };
+        statsArray.push(obj);
+    });
+    return statsArray;
 };
