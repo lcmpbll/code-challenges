@@ -112,7 +112,7 @@ const snorlaxAbilities = {
     weight: 4600,
 };
 
-skip('It should return an array containing only the ability names', assert => {
+test('It should return an array containing only the ability names', assert => {
     assert.deepEqual(
         extractAbilities(snorlaxAbilities.abilities),
         ['gluttony', 'cute charm', 'immunity']
