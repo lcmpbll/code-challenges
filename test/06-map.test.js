@@ -69,7 +69,7 @@ test('It should work with all odd numbers', assert => {
     );
 });
 
-skip('It should work with all even numbers', assert => {
+test('It should work with all even numbers', assert => {
     assert.deepEqual(
         evenOdd([2, 4, 6, 8, 10]),
         ['even', 'even', 'even', 'even', 'even']
