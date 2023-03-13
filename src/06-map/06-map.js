@@ -40,7 +40,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 export const mapTwoToThe = (arr) => {
-  // Solution code here...
+    return arr.map(n => 2 ** n);
 };
 
 /* ------------------------------------------------------------------------------------------------
