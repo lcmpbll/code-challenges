@@ -68,7 +68,16 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 export const evenOdd = (arr) => {
-  // Solution code here...
+    let newArray = [];
+    const oddOrEven = (n) => {
+        if(n % 2 === 0){
+            return 'even';
+        } else {
+            return 'odd';
+        }
+    };
+    arr.map(n => newArray.push(oddOrEven(n)));
+    return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------

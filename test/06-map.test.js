@@ -55,14 +55,14 @@ test('It should return an array containing the character code for each letter', 
     );
 });
 
-skip('It should return an array containing even or odd for each number', assert => {
+test('It should return an array containing even or odd for each number', assert => {
     assert.deepEqual(
         evenOdd([5, 8, 2, 6, 9, 13, 542, 541]),
         ['odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd']
     );
 });
 
-skip('It should work with all odd numbers', assert => {
+test('It should work with all odd numbers', assert => {
     assert.deepEqual(
         evenOdd([1, 3, 5, 7, 9]),
         ['odd', 'odd', 'odd', 'odd', 'odd']
