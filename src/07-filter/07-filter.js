@@ -9,7 +9,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 export const oddValues = (arr) => {
-  // Solution code here...
+    let odds = arr.filter(function(n) {
+        return n % 2 !== 0; 
+    });
+    return odds;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +71,7 @@ export const getStatName = (arr, minBaseStat) => {
 CHALLENGE 6
 
 Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children.
------------------------------------------------------------------------------------------------- *
+------------------------------------------------------------------------------------------------ */
 
 export const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
