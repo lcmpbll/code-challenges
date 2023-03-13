@@ -72,8 +72,10 @@ export const evenOdd = (arr) => {
     const oddOrEven = (n) => {
         if(n % 2 === 0){
             return 'even';
-        } else {
+        } else if(n % 2 === 1) {
             return 'odd';
+        } else {
+            return 'N/A';
         }
     };
     arr.map(n => newArray.push(oddOrEven(n)));

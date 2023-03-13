@@ -76,7 +76,7 @@ test('It should work with all even numbers', assert => {
     );
 });
 
-skip('It should return the string "N/A" if a non-number is included in the array', assert => {
+test('It should return the string "N/A" if a non-number is included in the array', assert => {
     assert.deepEqual(
         evenOdd([5, 8, 2, 'hi']), ['odd', 'even', 'even', 'N/A']);
 });
