@@ -120,7 +120,7 @@ skip('It should return no matches', assert => {
     assert.deepEqual(getStatName(snorlaxData.stats, 120), []);
 });
 
-skip('It should work for non-snorlax data', assert => {
+test('It should work for non-snorlax data', assert => {
     assert.deepEqual(getStatName([
         { baseStat: 10, stat: { name: 'one' } },
         { baseStat: -85, stat: { name: 'two' } },
