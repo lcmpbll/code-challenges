@@ -173,5 +173,17 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 export const extractChildren = (arr) => {
-  // Solution code here...
+    const charactersWithA = arr.filter(char => char.name.toLowerCase().includes('a'));
+    
+    const newChildrenArray = charactersWithA.reduce((acc, val) => {
+        if(val.children !== undefined){
+          
+            val.children.forEach(name => acc.push(name));
+            
+        }
+        return acc;
+        
+      
+    }, []);
+    return newChildrenArray;
 };
