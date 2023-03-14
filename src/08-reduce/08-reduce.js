@@ -150,7 +150,16 @@ Hint: The accumulator should begin as { min: 0, max: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 export const effortStats = (arr) => {
-  // Solution code here...
+    const minMaxEffort = arr.reduce((acc, val) => {
+        if(val.effort > acc.max){
+            acc.max = val.effort;
+        }
+        if(val.effort < acc.min || acc.min === 0){
+            acc.min = val.effort;
+        }
+        return acc;
+    }, { min: 0, max: 0 });
+    return minMaxEffort;
 };
 
 /* ------------------------------------------------------------------------------------------------
