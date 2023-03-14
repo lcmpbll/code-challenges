@@ -82,7 +82,13 @@ Write a function named countNumberOfChildren that, given the array of characters
 
 
 export const countNumberOfChildren = (arr) => {
-  // Solution code here...
+    return arr.reduce((acc, val) => {
+        if(val.children !== undefined){
+            acc += val.children.length;
+            
+        }
+        return acc;  
+    }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------

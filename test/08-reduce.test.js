@@ -142,7 +142,7 @@ const characters = [
     },
 ];
 
-skip('It should return the total number of children', assert => {
+test('It should return the total number of children', assert => {
     assert.equal(countNumberOfChildren(characters), 14);
 });
 
