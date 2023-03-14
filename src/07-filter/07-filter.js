@@ -54,7 +54,8 @@ For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array 
 ------------------------------------------------------------------------------------------------ */
 
 export const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+   
+    return arr.filter(n => n.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
