@@ -78,7 +78,11 @@ Write a function named getCharactersWithoutChildren that, given the array of cha
 ------------------------------------------------------------------------------------------------ */
 
 export const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+    return arr.filter(function(n){
+        if(n.children === undefined){
+            return n;
+        }
+    });
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -173,7 +173,7 @@ const characters = [
     },
 ];
 
-skip('It should return an array containing characters who do not have children', assert => {
+test('It should return an array containing characters who do not have children', assert => {
     assert.deepEqual(
         getCharactersWithoutChildren(characters), 
         [
