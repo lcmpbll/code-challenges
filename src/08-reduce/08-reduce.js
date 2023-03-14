@@ -118,11 +118,25 @@ You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
 
 const isPrime = (value) => {
-  // Solution code here...
+    if(value === 1){
+        return false;
+    }
+    for(let i = 2; i <= Math.sqrt(value); i ++){
+        if(value % i === 0){
+            return false;
+        }
+    }
+    return true;
 };
 
 export const countPrimeNumbers = (arr) => {
-  // Solution code here...
+    const numberOfPrimes = arr.reduce((acc, val) => {
+        if(isPrime(val) === true){
+            acc += 1;
+        }
+        return acc; 
+    }, 0);
+    return numberOfPrimes;
 };
 
 /* ------------------------------------------------------------------------------------------------
