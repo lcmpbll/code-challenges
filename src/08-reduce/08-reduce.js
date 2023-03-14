@@ -100,7 +100,13 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 export const calculateAverage = (arr) => {
-  // Solution code here...
+    const avg = arr.reduce((acc, val) => {
+        acc.count += 1;
+        acc.sum += val;
+        acc.avg = acc.sum / acc.count;
+        return acc;
+    }, { count: 0, sum: 0 });
+    return avg.avg;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -146,7 +146,7 @@ test('It should return the total number of children', assert => {
     assert.equal(countNumberOfChildren(characters), 14);
 });
 
-skip('It should return the average of the numbers in the array', assert => {
+test('It should return the average of the numbers in the array', assert => {
     assert.equal(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85]), 64);
 });
 
