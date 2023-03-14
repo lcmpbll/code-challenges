@@ -14,7 +14,13 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 export const howMuchPencil = (str) => {
-    // Solution code here...
+    const pencilArray = str.split('');
+    let newPencilArray = [];
+    for(let i = 0; i <= pencilArray.length; i ++){
+        let sharpenedPencil = pencilArray.slice(i, pencilArray.length).join('');
+        newPencilArray.push(sharpenedPencil);
+    }
+    return newPencilArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +32,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 export const wordsToCharList = (str) => {
-    // Solution code here...
+    let lettersArray = str.split('');
+    return lettersArray;
 };
 
 
@@ -43,7 +50,24 @@ Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
 
 export const listFoods = (recipe) => {
-    // Solution code here...
+    const ingredientsArray = recipe.ingredients;
+    
+        
+    let endOfFood = [];
+    for(let i = 0; i <= ingredientsArray.length; i ++){
+        if(ingredientsArray[i] !== undefined){
+            let spot = ingredientsArray[i].indexOf(' ');
+            let spotNumTwo = ingredientsArray[i].indexOf(' ', spot + 1);
+        
+            let ingredientOnly = ingredientsArray[i].slice(spotNumTwo + 1);
+            endOfFood.push(ingredientOnly);
+        }
+        
+    }
+    
+    return endOfFood;
+  
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +79,29 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 export const splitFoods = (recipe) => {
-    // Solution code here...
+    const ingredientsArray = recipe.ingredients;
+    let onlyIngredients = [];
+    for(let i = 0; i <= ingredientsArray.length; i ++){
+        if(ingredientsArray[i] !== undefined){
+            let ingredients = ingredientsArray[i].split(' ');
+            if(ingredients.length === 3){
+                onlyIngredients.push(ingredients[2]);
+            } else if(ingredients.length === 4){
+                let ingredient = ingredients[2] + ' ' + ingredients[3];
+                onlyIngredients.push(ingredient);
+                
+            } else if(ingredients.length === 5){
+                let ingredient = ingredients[2] + ' ' + ingredients[3] + ' ' + ingredients[4];
+                onlyIngredients.push(ingredient);
+            }
+            
+            
+            
+           
+        }
+    }
+    return onlyIngredients;
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +115,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 ------------------------------------------------------------------------------------------------ */
 
 export const stepActions = (recipe) => {
-    // Solution code here...
+    let steps = recipe.steps;
+    let actions = [];
+    for(let i = 0; i < steps.length; i ++){
+        actions.push(steps[i].slice(0, steps[i].indexOf(' ')));
+    }
+    return actions;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +137,16 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 export const removeEvenValues = (arr) => {
-    // Solution code here...
+    
+    for(let i = 0; i <= arr.length; i ++){
+        
+        if(arr[i] % 2 === 0){
+            arr.splice(i, 1);
+            i -= 1;
+        }
+    }
+    
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,7 +165,21 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 export const removeLastCharacters = (str, numberOfCharacters) => {
-    // Solution code here...
+    let answer = null;
+    if(numberOfCharacters < 0){
+        answer = str;
+       
+        return answer;
+    } else if(numberOfCharacters > str.length){
+        answer = '';
+        
+    } else {
+        answer = str.slice(0, str.length - numberOfCharacters); 
+      
+        
+    }
+    return answer;
+    
 };
 
 
@@ -116,7 +190,10 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 ------------------------------------------------------------------------------------------------ */
 
 export const totalSumCSV = (str) => {
-    // Solution code here...
+    const arr = str.split(',');
+    let total = 0;
+    arr.forEach(num => total += parseInt(num));
+    return total;
 };
 
 
@@ -129,7 +206,16 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 export const removeVowels = (str) => {
-    // Solution code here...
+    const arr = str.split('');
+    let noVowelArr = [];
+    const regex = /[aeiou]/;
+    for(let i = 0; i < arr.length; i ++){
+        if(arr[i].match(regex) === null){
+            noVowelArr.push(arr[i]); 
+        } 
+    }
+    let noVowelStr = noVowelArr.join('');
+    return noVowelStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -143,5 +229,19 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 export const extractVowels = (str) => {
-    // Solution code here...
+    const arr = str.split('');
+    let noVowelArr = [];
+    let vowelArr = [];
+    const regex = /[aeiou]/;
+    for(let i = 0; i < arr.length; i ++){
+        if(arr[i].match(regex) === null){
+            noVowelArr.push(arr[i]); 
+        } else {
+            vowelArr.push(arr[i]);
+        }
+    }
+    let vowelStr = vowelArr.sort().join('');
+    let noVowelStr = noVowelArr.join('');
+    return [noVowelStr, vowelStr];
 };
+
