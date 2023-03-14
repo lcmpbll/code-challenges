@@ -58,8 +58,20 @@ eye color:
 
 export const eyeColorNames = (arr) => {
     const characterEyes = arr.reduce((accumulator, value, idx) => {
-        accumulator[value.eye_color] = [value.name];
+        let currentArray = null;
+        if(accumulator[value.eye_color] !== undefined){
+            currentArray = accumulator[value.eye_color];
+        } else {
+            currentArray = [];
+        }
+        
+        return {
+            ...accumulator,
+            [value.eye_color] : currentArray.concat(value.name)
+        };
     }, {}); 
+    // console.log(characterEyes);
+    return characterEyes;
 };
 
 /* ------------------------------------------------------------------------------------------------
