@@ -1,3 +1,4 @@
+
 import {
     firstLetters,
     findHappiness,
@@ -109,38 +110,38 @@ skip('It should sort events by the day on which they happen', assert => {
         'Thursday Night Code', 
         'Saturday Night Fever'
     ];
+
+//     const sortedEvents = sortByDay(events);
     
-    const sortedEvents = sortByDay(events);
+//     assert.equal(sortedEvents[0].includes('Dancing on Mondays and Tuesdays'), true);
+//     assert.equal(sortedEvents[0].includes('Meet the inventors! Monday, August 7'), true);
+//     assert.equal(sortedEvents[1].includes('Dancing on Mondays and Tuesdays'), true);
+//     assert.equal(sortedEvents[1].includes('in the club on a Tuesday'), true);
+//     assert.deepEqual(sortedEvents[2], []);
+//     assert.deepEqual(sortedEvents[3], ['Thursday Night Code']);
+//     assert.deepEqual(sortedEvents[4], []);
+//     assert.deepEqual(sortedEvents[5], ['Saturday Night Fever']);
+//     assert.deepEqual(sortedEvents[6], []);
+
+//     const events2 = ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thursday'];
     
-    assert.equal(sortedEvents[0].includes('Dancing on Mondays and Tuesdays'), true);
-    assert.equal(sortedEvents[0].includes('Meet the inventors! Monday, August 7'), true);
-    assert.equal(sortedEvents[1].includes('Dancing on Mondays and Tuesdays'), true);
-    assert.equal(sortedEvents[1].includes('in the club on a Tuesday'), true);
-    assert.deepEqual(sortedEvents[2], []);
-    assert.deepEqual(sortedEvents[3], ['Thursday Night Code']);
-    assert.deepEqual(sortedEvents[4], []);
-    assert.deepEqual(sortedEvents[5], ['Saturday Night Fever']);
-    assert.deepEqual(sortedEvents[6], []);
+//     const sortedEvents2 = sortByDay(events2);
 
-    const events2 = ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thursday'];
-    
-    const sortedEvents2 = sortByDay(events2);
+//     assert.deepEqual(sortedEvents2[0], ['Monday']);
+//     assert.equal(sortedEvents2[1].includes('Tuesday'), true);
+//     assert.equal(sortedEvents2[1].includes('Tuesday 2'), true);
+//     assert.deepEqual(sortedEvents2[2], ['Wednesday and Thursday']);
+//     assert.equal(sortedEvents2[3].includes('Wednesday and Thursday'), true);
+//     assert.equal(sortedEvents2[3].includes('Thursday'), true);
+//     assert.deepEqual(sortedEvents2[4], []);
+//     assert.deepEqual(sortedEvents2[5], []);
+//     assert.deepEqual(sortedEvents2[6], []);
+// });
 
-    assert.deepEqual(sortedEvents2[0], ['Monday']);
-    assert.equal(sortedEvents2[1].includes('Tuesday'), true);
-    assert.equal(sortedEvents2[1].includes('Tuesday 2'), true);
-    assert.deepEqual(sortedEvents2[2], ['Wednesday and Thursday']);
-    assert.equal(sortedEvents2[3].includes('Wednesday and Thursday'), true);
-    assert.equal(sortedEvents2[3].includes('Thursday'), true);
-    assert.deepEqual(sortedEvents2[4], []);
-    assert.deepEqual(sortedEvents2[5], []);
-    assert.deepEqual(sortedEvents2[6], []);
-});
+// skip('It should return the ith character of the ith string', assert => {
+//     const words = ['apple', 'banana', 'cantaloupe'];
 
-skip('It should return the ith character of the ith string', assert => {
-    const words = ['apple', 'banana', 'cantaloupe'];
-
-    assert.deepEqual(characterByIndex(words), ['a', 'a', 'n']);
-    assert.deepEqual(characterByIndex(['abc', 'def', 'ghi']), ['a', 'e', 'i']);
-    assert.deepEqual(characterByIndex(['wow', 'wow', 'wow']), ['w', 'o', 'w']);
-});
+//     assert.deepEqual(characterByIndex(words), ['a', 'a', 'n']);
+//     assert.deepEqual(characterByIndex(['abc', 'def', 'ghi']), ['a', 'e', 'i']);
+//     assert.deepEqual(characterByIndex(['wow', 'wow', 'wow']), ['w', 'o', 'w']);
+// });

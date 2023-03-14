@@ -11,20 +11,20 @@ import {
     extractVowels
 } from '../src/05-split-join-slice-splice/05-split-join-slice-splice.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('05 split join slice splice');
 
-/* ------------------------------------------------------------------------------------------------
-TESTS
+// /* ------------------------------------------------------------------------------------------------
+// TESTS
 
-All the code below will verify that your functions are working to solve the challenges.
+// All the code below will verify that your functions are working to solve the challenges.
 
-DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
+// DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
 
-Run your tests from the browser using live-server, or console via: npm test
+// Run your tests from the browser using live-server, or console via: npm test
 
------------------------------------------------------------------------------------------------- */
+// ------------------------------------------------------------------------------------------------ */
 
 skip('It should return a list of shortening words', assert => {
     assert.deepEqual(

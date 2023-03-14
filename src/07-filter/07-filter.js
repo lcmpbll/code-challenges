@@ -9,7 +9,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 export const oddValues = (arr) => {
-  // Solution code here...
+    let odds = arr.filter(function(n) {
+        return n % 2 !== 0; 
+    });
+    return odds;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +27,9 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 export const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+    const regex = /[AaEeIiOoUu]/;
+    let vowelWords = arr.filter((n) => regex.test(n));
+    return vowelWords;
 };
 
 
@@ -37,7 +42,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 export const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+    return arr.filter(n => forbiddenValues.indexOf(n) === -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,7 +54,8 @@ For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array 
 ------------------------------------------------------------------------------------------------ */
 
 export const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+   
+    return arr.filter(n => n.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,17 +67,22 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 export const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+    let newArray = arr.filter(n => n.baseStat > minBaseStat).map(n => n.stat.name);
+    return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
 Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children.
------------------------------------------------------------------------------------------------- *
+------------------------------------------------------------------------------------------------ */
 
 export const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+    return arr.filter(function(n){
+        if(n.children === undefined){
+            return n;
+        }
+    });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,5 +94,16 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 export const evenOddNumericValues = (arr) => {
-  // Solution code here...
+    let newArray = arr.filter(function(n){ 
+        if(typeof(n) === 'number'){
+            return n;
+        }
+    }).map(n => 
+    {if(n % 2 === 0){
+        return 'even';
+    } else {
+        return 'odd';
+    }
+    });
+    return newArray;
 };

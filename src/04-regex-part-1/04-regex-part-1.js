@@ -13,7 +13,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 export const isNum = (input) => {
-  // Solution code here...
+    const regex = /[0-9]/;
+    return regex.test(input);
+  
 
 };
 
@@ -26,7 +28,13 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 export const isCapitalized = (str) => {
-  // Solution code here...
+    let capitolizedArray = [];
+    let regex = /\b\w*[A-Z]\w*\b/g;
+    if(regex.test(str)){
+        capitolizedArray = str.match(regex);
+    }
+    return capitolizedArray; 
+   
 
 };
 
@@ -37,7 +45,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 export const citiesAtoJ = (arr) => {
-  // Solution code here...
+    // let regex = /\b\[A-Ja-j]\w*\b/g;
+    let regex = /^[A-J]/;
+    let aToJCities = [];
+    for(let i = 0; i <= arr.length; i ++){
+        if(regex.test(arr[i])){
+            aToJCities.push(arr[i]);
+        }
+    }
+    return aToJCities;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +69,14 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 export const matchMonth = (input) => {
-  // Solution code here...
+    if(typeof(input) !== 'string'){
+        return false;
+    }
+    let regex = /^[Oo](ctober)/;
+    if(input.length === 3){
+        regex = /^[Oo](ct)/;
+    }
+    return regex.test(input);
 
 };
 
@@ -68,7 +91,10 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 export const noPunctuation = str => {
-  // Solution code here...
+    let regex = /\b\w*\b\s/g;
+    let wordNoPunctuation = str.match(regex);
+    return wordNoPunctuation;
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +110,11 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 export const hangman = (str) => {
-  // Solution code here...
+    let regex = /[AaEeIiOoUu]/g;
+    let newStr = str.replace(regex, '_');
+    return newStr;
+    
+    
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,5 +130,7 @@ Hint: All of these words end with the letters "ells".
 ------------------------------------------------------------------------------------------------ */
 
 export const findShells = (str) => {
-  // Solution code here...
+    let regex = /\b\w*(ells)/g; 
+    let shells = str.match(regex);
+    return shells;
 };
