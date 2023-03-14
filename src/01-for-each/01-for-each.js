@@ -9,11 +9,11 @@ Then, write a function named speaker that takes in a string and a callback funct
 ------------------------------------------------------------------------------------------------ */
 
 export function greeting(message) {
-    // Solution code here...
-};
+    return message.toUpperCase();
+}
 
 export const speaker = (message, callback) => {
-    // Solution code here...
+    return callback(message);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,11 +33,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 export const addValues = (arr, value) => {
-    // Solution code here...
+    arr.push(value);
+    
 };
 
 export const addNumbers = (num, arr, times, callback) => {
-    // Solution code here...
+    for(let i = 0; i < times; i ++){
+        callback(arr, num);
+    }
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,11 +59,16 @@ Return the modified array.
 
 
 export const removeOne = (num, arr) => {
-    // Solution code here...
+    if(num % 3 === 2){
+        arr.pop();
+    }
 };
 
 export const removeElements = (arr, callback) => {
-    // Solution code here...
+    for(let i = 0; i < arr.length; i ++){
+        callback(arr[i], arr);
+    }
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +77,8 @@ CHALLENGE 4
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 export const removeWithForEach = (arr, callback) => {
-    // Solution code here...
+    arr.forEach(num => callback(num, arr));
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,7 +93,12 @@ in removeOne directly into this anonymous function.
 ------------------------------------------------------------------------------------------------ */
 
 export const removeWithAnon = (arr) => {
-    // Solution code here...
+    arr.forEach((num) => {
+        if(num % 3 === 2){
+            arr.pop();
+        }
+    });
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,7 +119,13 @@ This function should create another new array (the grocery list) and then use fo
 ------------------------------------------------------------------------------------------------ */
 
 export const createList = (arr) => {
-    // Solution code here...
+    let groceryList = [];
+    arr.forEach((item) => {
+        if(item.available === true){
+            groceryList.push(item.name);
+        }
+    });
+    return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,5 +145,17 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 export const fizzBuzz = (arr) => {
-    // Solution code here...
+    let output = [];
+    arr.forEach((num) => {
+        if(num % 3 === 0 && num % 5 === 0){
+            output.push('Fizz Buzz');
+        } else if(num % 5 === 0){
+            output.push('Buzz');
+        } else if(num % 3 === 0){
+            output.push('Fizz');
+        } else {
+            output.push(num);
+        }
+    });
+    return output;
 };

@@ -8,7 +8,7 @@ import {
     evenOddNumericValues
 } from '../src/07-filter/07-filter.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit; //skip
 
 QUnit.module('07 Array filter');
 

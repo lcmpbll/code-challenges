@@ -8,20 +8,20 @@ import {
     findShells
 } from '../src/04-regex-part-1/04-regex-part-1.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('04 Regex Part 1');
 
-/* ------------------------------------------------------------------------------------------------
-TESTS
+// /* ------------------------------------------------------------------------------------------------
+// TESTS
 
-All the code below will verify that your functions are working to solve the challenges.
+// All the code below will verify that your functions are working to solve the challenges.
 
-DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
+// DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
 
-Run your tests from the browser using live-server, or console via: npm test
+// Run your tests from the browser using live-server, or console via: npm test
 
------------------------------------------------------------------------------------------------- */
+// ------------------------------------------------------------------------------------------------ */
 
 
 test('It should return true if the input is a number', assert => {
@@ -76,7 +76,7 @@ test('It should match any of the acceptable inputs', assert => {
     assert.ok(matchMonth('october'));
 });
 
-skip('It should not match anything other than the acceptable inputs', assert => {
+test('It should not match anything other than the acceptable inputs', assert => {
     assert.notOk(matchMonth('November'));
     assert.notOk(matchMonth('nov'));
     assert.notOk(matchMonth(123));
@@ -98,7 +98,7 @@ test('It should only return words that are immediately followed by a space', ass
     );
 });
 
-skip('It should not contain words that are followed by any non-space character', assert => {
+test('It should not contain words that are followed by any non-space character', assert => {
     const badWords = ['amet,', 'elit.', 'egestas.', 'elit,', 'sed.', 'sem,', 'diam.', 'nibh.', 'porttitor.', 'euismod,', 'ultrices.', 'massa,', 'vel,', 'purus.', 'purus,', 'odio.', 'aliquet,', 'non,', 'sem.'];
     noPunctuation(lorem).forEach(word => {
         assert.notOk(badWords.includes(word));
@@ -107,7 +107,7 @@ skip('It should not contain words that are followed by any non-space character',
 
 const startString = 'This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!';
 
-skip('It should remove the vowels from the hangman string and replace them with underscores', assert => {
+test('It should remove the vowels from the hangman string and replace them with underscores', assert => {
     assert.equal(
         hangman(startString), 
         'Th_s _s _ r_g_x ch_ll_ng_. W_ _r_ try_ng t_ cr__t_ _ h_ngm_n phr_s_ wh_r_ _ll _f th_ v_w_ls _r_ m_ss_ng!'
@@ -119,14 +119,14 @@ skip('It should remove the vowels from the hangman string and replace them with 
     );
 });
 
-skip('It should not contain the letters "a", "e", "i", "o", or "u"', assert => {
+test('It should not contain the letters "a", "e", "i", "o", or "u"', assert => {
     const result = hangman(startString);
     ['a', 'e', 'i', 'o', 'u'].forEach(vowel => {
         assert.notOk(result.includes(vowel));
     });
 });
 
-skip('It should return an array of instances of "sells", shells", and "seashells"', assert => {
+test('It should return an array of instances of "sells", shells", and "seashells"', assert => {
     const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
     const foundShells = findShells(seashells);
     assert.deepEqual(foundShells, ['sells', 'seashells', 'shells', 'sells', 'seashells', 'sells', 'shells', 'sells', 'shells']);
