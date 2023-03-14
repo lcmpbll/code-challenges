@@ -80,7 +80,7 @@ const starWarsData = [{
     gender: 'female'
 }];
 
-skip('It should return an object with eye color counts', assert => {
+test('It should return an object with eye color counts', assert => {
     assert.deepEqual(
         eyeColorTally(starWarsData), 
         { blue: 1, yellow: 2, red: 1, brown: 1 }

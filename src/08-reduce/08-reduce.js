@@ -27,7 +27,23 @@ eye color:
 ------------------------------------------------------------------------------------------------ */
 
 export const eyeColorTally = (arr) => {
-  // Solution code here...
+    const eyeColors = arr.reduce((accumulator, value, idx) => {
+        //accumulator[value[idx].eye_color] = accumulator[value[idx].eye_color];
+        let currCount = null;
+        if(accumulator[value.eye_color] !== undefined){
+            currCount = accumulator[value.eye_color];
+        } else {
+            currCount = 0;
+        }
+        
+        return {
+            ...accumulator,
+            [value.eye_color]: currCount += 1,
+        }; 
+        
+        
+    }, {});
+    return eyeColors;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,7 +57,9 @@ eye color:
 ------------------------------------------------------------------------------------------------ */
 
 export const eyeColorNames = (arr) => {
-  // Solution code here...
+    const characterEyes = arr.reduce((accumulator, value, idx) => {
+        accumulator[value.eye_color] = [value.name];
+    }, {}); 
 };
 
 /* ------------------------------------------------------------------------------------------------
