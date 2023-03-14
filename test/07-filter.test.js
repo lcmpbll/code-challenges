@@ -30,7 +30,7 @@ test('It should return an array containing only odd integers', assert => {
     assert.deepEqual(oddValues([2, 4, 6, 8]), []);
 });
 
-skip('It should return an array containing only words that have vowels', assert => {
+test('It should return an array containing only words that have vowels', assert => {
     assert.deepEqual(
         filterStringsWithVowels(['gregor', 'hound', 'xyz']),
         ['gregor', 'hound']
