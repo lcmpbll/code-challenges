@@ -112,7 +112,7 @@ test('It should work for non-Snorlax data', assert => {
     );
 });
 
-skip('It should return the name of the stats that exceed that maximum', assert => {
+test('It should return the name of the stats that exceed that maximum', assert => {
     assert.deepEqual(getStatName(snorlaxData.stats, 50), ['special-defense', 'special-attack']);
 });
 
