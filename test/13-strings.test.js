@@ -26,7 +26,7 @@ Run your tests from the browser using live-server, or console via: npm test
 
 ------------------------------------------------------------------------------------------------ */
 
-test('It should return the first letter of each element of the array', assert => {
+skip('It should return the first letter of each element of the array', assert => {
     const words = ['apple', 'banana', 'cantaloupe'];
 
     assert.deepEqual(firstLetters(words), ['a', 'b', 'c']);

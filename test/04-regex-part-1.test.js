@@ -24,7 +24,7 @@ Run your tests from the browser using live-server, or console via: npm test
 ------------------------------------------------------------------------------------------------ */
 
 
-test('It should return true if the input is a number', assert => {
+skip('It should return true if the input is a number', assert => {
     assert.ok(isNum(1234567890));
     assert.ok(isNum('12345'));
 });

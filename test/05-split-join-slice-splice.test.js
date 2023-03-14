@@ -26,7 +26,7 @@ Run your tests from the browser using live-server, or console via: npm test
 
 ------------------------------------------------------------------------------------------------ */
 
-test('It should return a list of shortening words', assert => {
+skip('It should return a list of shortening words', assert => {
     assert.deepEqual(
         howMuchPencil('Welcome'), 
         ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']

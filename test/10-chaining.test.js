@@ -22,7 +22,7 @@ Run your tests from the browser using live-server, or console via: npm test
 ------------------------------------------------------------------------------------------------ */
 
 
-test('It should return the number of times the input is in the nested arrays', assert => {
+skip('It should return the number of times the input is in the nested arrays', assert => {
     assert.equal(count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]), 4);
     assert.equal(count(3, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]), 2);
     assert.equal(count(12, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]), 0);

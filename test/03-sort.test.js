@@ -25,8 +25,7 @@ Run your tests from the browser using live-server, or console via: npm test
 
 ------------------------------------------------------------------------------------------------ */
 
-
-test('It should sort high-to-low the numbers in an array', assert => {
+skip('It should sort high-to-low the numbers in an array', assert => {
     assert.deepEqual(sortBackwards([3, 4, 5, 6, 7]), [7, 6, 5, 4, 3]);
     assert.deepEqual(sortBackwards([3, 2, 1]), [3, 2, 1]);
     assert.deepEqual(sortBackwards([12, 20, 3]), [20, 12, 3]);

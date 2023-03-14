@@ -32,7 +32,7 @@ const courseInfo = {
     finalExam: true
 };
 
-test('It should return the keys from an object', assert => {
+skip('It should return the keys from an object', assert => {
     assert.deepEqual(
         getCourseKeys(courseInfo), 
         ['name', 'duration', 'topics', 'finalExam']

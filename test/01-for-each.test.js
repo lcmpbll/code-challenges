@@ -25,8 +25,7 @@ DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
 Run your tests from the browser using live-server, or console via: npm test
 
 ------------------------------------------------------------------------------------------------ */
-
-test('It should return the message with all uppercase characters', assert => {
+skip('It should return the message with all uppercase characters', assert => {
     const result = speaker('hello Bootcamp 2 students!', greeting);
     assert.equal(result, 'HELLO BOOTCAMP 2 STUDENTS!');
 });
