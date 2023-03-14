@@ -94,5 +94,16 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 export const evenOddNumericValues = (arr) => {
-  // Solution code here...
+    let newArray = arr.filter(function(n){ 
+        if(typeof(n) === 'number'){
+            return n;
+        }
+    }).map(n => 
+    {if(n % 2 === 0){
+        return 'even';
+    } else {
+        return 'odd';
+    }
+    });
+    return newArray;
 };

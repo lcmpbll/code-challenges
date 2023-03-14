@@ -8,7 +8,7 @@ import {
     evenOddNumericValues
 } from '../src/07-filter/07-filter.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit; //skip
 
 QUnit.module('07 Array filter');
 
@@ -116,7 +116,7 @@ test('It should return the name of the stats that exceed that maximum', assert =
     assert.deepEqual(getStatName(snorlaxData.stats, 50), ['special-defense', 'special-attack']);
 });
 
-skip('It should return no matches', assert => {
+test('It should return no matches', assert => {
     assert.deepEqual(getStatName(snorlaxData.stats, 120), []);
 });
 
@@ -183,12 +183,12 @@ test('It should return an array containing characters who do not have children',
     );
 });
 
-skip('It should remove non-integers and return "even" or "odd', assert => {
+test('It should remove non-integers and return "even" or "odd', assert => {
     assert.deepEqual(evenOddNumericValues(['Gregor', 2, 4, 1]), ['even', 'even', 'odd']);
     assert.deepEqual(evenOddNumericValues(['a', 'b', 'c']), []);
 });
 
-skip('It should not accept strings that look like numbers', assert => {
+test('It should not accept strings that look like numbers', assert => {
     assert.deepEqual(
         evenOddNumericValues(['1', 2, 3, '4', 5, '6']), 
         ['even', 'odd', 'odd']
