@@ -51,15 +51,15 @@ const secondNumbers = [1, 2, 3, 4];
 const firstStrings = ['Demi', 'Gregor', 'Hound'];
 const secondStrings = ['Gary', 'Charlotte', 'Demi', 'Gregor', 'Hound'];
 
-skip('It should return an array that includes any elements not in the first array', assert => {
+test('It should return an array that includes any elements not in the first array', assert => {
     assert.deepEqual(notInFirstArray(firstNumbers, secondNumbers), [4]);
 });
 
-skip('It should also work with an array of strings', assert => {
+test('It should also work with an array of strings', assert => {
     assert.deepEqual(notInFirstArray(firstStrings, secondStrings), ['Gary', 'Charlotte']);
 });
 
-skip('It should work with empty arrays', assert => {
+test('It should work with empty arrays', assert => {
     assert.deepEqual(notInFirstArray([], []), []);
     assert.deepEqual(notInFirstArray([], [1, 2, 3, 4, 5]), [1, 2, 3, 4, 5]);
     assert.deepEqual(notInFirstArray([1, 2, 3, 4, 5], []), []);

@@ -42,7 +42,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 export const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+    return arr.filter(n => forbiddenValues.indexOf(n) === -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
