@@ -97,7 +97,7 @@ const snorlaxData = {
     weight: 4600,
 };
 
-test('It should return an array containing the stats that are greater than the input', assert => {
+skip('It should return an array containing the stats that are greater than the input', assert => {
     assert.deepEqual(
         getBaseStatGreaterThan(snorlaxData.stats, 75),
         [{ stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 }]

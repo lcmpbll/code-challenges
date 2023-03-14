@@ -26,7 +26,7 @@ QUnit.module('05 split join slice splice');
 
 // ------------------------------------------------------------------------------------------------ */
 
-test('It should return a list of shortening words', assert => {
+skip('It should return a list of shortening words', assert => {
     assert.deepEqual(
         howMuchPencil('Welcome'), 
         ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']

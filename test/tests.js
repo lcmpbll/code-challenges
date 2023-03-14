@@ -5,7 +5,7 @@ import './04-regex-part-1.test.js';
 // import './05-split-join-slice-splice.test.js';
 // import './06-map.test.js';
 // import './07-filter.test.js';
-// import './08-reduce.test.js';
+import './08-reduce.test.js';
 // import './09-object-iteration.test.js';
 // import './10-chaining.test.js';
 // import './11-regex-part-2.test.js';

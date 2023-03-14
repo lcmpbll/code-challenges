@@ -9,7 +9,11 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 export const countNumberOfElements = (arr) => {
-  // Solution code here...
+    const length = arr.reduce((accumulator, value, idx) => {
+        accumulator = accumulator + 1;
+        return accumulator;
+    }, 0);
+    return length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,7 +27,23 @@ eye color:
 ------------------------------------------------------------------------------------------------ */
 
 export const eyeColorTally = (arr) => {
-  // Solution code here...
+    const eyeColors = arr.reduce((accumulator, value, idx) => {
+        //accumulator[value[idx].eye_color] = accumulator[value[idx].eye_color];
+        let currCount = null;
+        if(accumulator[value.eye_color] !== undefined){
+            currCount = accumulator[value.eye_color];
+        } else {
+            currCount = 0;
+        }
+        
+        return {
+            ...accumulator,
+            [value.eye_color]: currCount += 1,
+        }; 
+        
+        
+    }, {});
+    return eyeColors;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +57,21 @@ eye color:
 ------------------------------------------------------------------------------------------------ */
 
 export const eyeColorNames = (arr) => {
-  // Solution code here...
+    const characterEyes = arr.reduce((accumulator, value, idx) => {
+        let currentArray = null;
+        if(accumulator[value.eye_color] !== undefined){
+            currentArray = accumulator[value.eye_color];
+        } else {
+            currentArray = [];
+        }
+        
+        return {
+            ...accumulator,
+            [value.eye_color] : currentArray.concat(value.name)
+        };
+    }, {}); 
+    // console.log(characterEyes);
+    return characterEyes;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,7 +82,13 @@ Write a function named countNumberOfChildren that, given the array of characters
 
 
 export const countNumberOfChildren = (arr) => {
-  // Solution code here...
+    return arr.reduce((acc, val) => {
+        if(val.children !== undefined){
+            acc += val.children.length;
+            
+        }
+        return acc;  
+    }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +100,13 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 export const calculateAverage = (arr) => {
-  // Solution code here...
+    const avg = arr.reduce((acc, val) => {
+        acc.count += 1;
+        acc.sum += val;
+        acc.avg = acc.sum / acc.count;
+        return acc;
+    }, { count: 0, sum: 0 });
+    return avg.avg;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,11 +118,25 @@ You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
 
 const isPrime = (value) => {
-  // Solution code here...
+    if(value === 1){
+        return false;
+    }
+    for(let i = 2; i <= Math.sqrt(value); i ++){
+        if(value % i === 0){
+            return false;
+        }
+    }
+    return true;
 };
 
 export const countPrimeNumbers = (arr) => {
-  // Solution code here...
+    const numberOfPrimes = arr.reduce((acc, val) => {
+        if(isPrime(val) === true){
+            acc += 1;
+        }
+        return acc; 
+    }, 0);
+    return numberOfPrimes;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +150,16 @@ Hint: The accumulator should begin as { min: 0, max: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 export const effortStats = (arr) => {
-  // Solution code here...
+    const minMaxEffort = arr.reduce((acc, val) => {
+        if(val.effort > acc.max){
+            acc.max = val.effort;
+        }
+        if(val.effort < acc.min || acc.min === 0){
+            acc.min = val.effort;
+        }
+        return acc;
+    }, { min: 0, max: 0 });
+    return minMaxEffort;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,5 +173,17 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 export const extractChildren = (arr) => {
-  // Solution code here...
+    const charactersWithA = arr.filter(char => char.name.toLowerCase().includes('a'));
+    
+    const newChildrenArray = charactersWithA.reduce((acc, val) => {
+        if(val.children !== undefined){
+          
+            val.children.forEach(name => acc.push(name));
+            
+        }
+        return acc;
+        
+      
+    }, []);
+    return newChildrenArray;
 };
