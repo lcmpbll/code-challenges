@@ -38,7 +38,11 @@ Write a function named getHouseWords that uses Object.values to return a new arr
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseWords = houses => {
-    // Solution code here...
+    let houseWordsArray = [];
+    Object.values(houses).forEach(property => {
+        houseWordsArray.push(property.words);
+    });
+    return houseWordsArray;
 };
 
 /* ------------------------------------------------------------------------------------------------

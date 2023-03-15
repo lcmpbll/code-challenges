@@ -91,7 +91,7 @@ test('It should return an array of the names of the houses', assert => {
     );
 });
 
-skip('It should return an array of the words of all houses', assert => {
+test('It should return an array of the words of all houses', assert => {
     assert.deepEqual(
         getHouseWords(houses), 
         [
