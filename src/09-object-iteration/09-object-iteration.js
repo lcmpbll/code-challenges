@@ -9,7 +9,11 @@ For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
 
 export const getCourseKeys = obj => {
-    // Solution code here...
+    let propertiesArray = [];
+    for(let properties in obj){
+        propertiesArray.push(properties);
+    }
+    return propertiesArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
