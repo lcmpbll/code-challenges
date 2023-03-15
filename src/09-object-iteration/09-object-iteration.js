@@ -9,7 +9,11 @@ For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
 
 export const getCourseKeys = obj => {
-    // Solution code here...
+    let propertiesArray = [];
+    for(let properties in obj){
+        propertiesArray.push(properties);
+    }
+    return propertiesArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,7 +24,11 @@ Write a function named getHouses that returns a new array containing the names o
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseNames = houses => {
-    // Solution code here...
+    let houseArray = [];
+    for(let house in houses){
+        houseArray.push(house);
+    }
+    return houseArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,7 +38,11 @@ Write a function named getHouseWords that uses Object.values to return a new arr
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseWords = houses => {
-    // Solution code here...
+    let houseWordsArray = [];
+    Object.values(houses).forEach(property => {
+        houseWordsArray.push(property.words);
+    });
+    return houseWordsArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,7 +52,15 @@ Write a function named getHousesWithSize that uses Object.entries to return a ne
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseSizes = houses => {
-    // Solution code here...
+    let houseSizeArray = [];
+    Object.entries(houses).forEach(property => {
+        let house = { 'house': null, members: 0 };
+        house.house = property[0];
+        house.members = property[1].characters.length;
+        houseSizeArray.push(house);
+    });
+    return houseSizeArray;
+    
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -54,7 +74,13 @@ This function should take in the house data and a house name and return a the na
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseHead = (houses, houseToFind) => {
-    // Solution code here...
+    let leader = '';
+    Object.entries(houses).forEach(property => {
+        if(property[0] === houseToFind){
+            leader = property[1]['head'];
+        }
+    });
+    return leader;
 
 };
 
@@ -65,7 +91,13 @@ Write a function named totalCharacters that takes in the house data and returns 
 ------------------------------------------------------------------------------------------------ */
 
 export const totalCharacters = houses => {
-    // Solution code here...
+    let count = 0;
+    Object.entries(houses).forEach(propterties => {
+        let characters = propterties[1].characters.length;
+        count += characters;
+        
+    });
+    return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +107,11 @@ Write a function named getHouseWordsMapped that does the same things as getHouse
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseWordsMapped = houses => {
-    // Solution code here...
+    let houseWords = [];
+    Object.values(houses).map(property => {
+        houseWords.push(property['words']);
+    });
+    return houseWords;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,5 +121,9 @@ Write a function named totalCharactersReduced that that does the same things as 
 ------------------------------------------------------------------------------------------------ */
 
 export const totalCharactersReduced = houses => {
-    // Solution code here...
+    const castTotal = Object.values(houses).reduce((acc, val) => {
+        acc += val['characters'].length;
+        return acc;
+    }, 0);
+    return castTotal;
 };
