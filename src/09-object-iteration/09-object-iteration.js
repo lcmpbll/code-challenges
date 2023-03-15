@@ -121,5 +121,9 @@ Write a function named totalCharactersReduced that that does the same things as 
 ------------------------------------------------------------------------------------------------ */
 
 export const totalCharactersReduced = houses => {
-    // Solution code here...
+    const castTotal = Object.values(houses).reduce((acc, val) => {
+        acc += val['characters'].length;
+        return acc;
+    }, 0);
+    return castTotal;
 };

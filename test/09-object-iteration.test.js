@@ -9,7 +9,7 @@ import {
     totalCharactersReduced,
 } from '../src/09-object-iteration/09-object-iteration.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('09 Object Iteration');
 
@@ -159,6 +159,6 @@ test('It should return an array of the words of all houses using map', assert =>
 });
 
 
-skip('It should return the number of characters in all houses using reduce', assert => {
+test('It should return the number of characters in all houses using reduce', assert => {
     assert.equal(totalCharactersReduced(houses), 36);
 });
