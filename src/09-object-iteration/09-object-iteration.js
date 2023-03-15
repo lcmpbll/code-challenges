@@ -107,7 +107,11 @@ Write a function named getHouseWordsMapped that does the same things as getHouse
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseWordsMapped = houses => {
-    // Solution code here...
+    let houseWords = [];
+    Object.values(houses).map(property => {
+        houseWords.push(property['words']);
+    });
+    return houseWords;
 };
 
 /* ------------------------------------------------------------------------------------------------
