@@ -84,7 +84,7 @@ let houses = {
     }
 };
 
-skip('It should return an array of the names of the houses', assert => {
+test('It should return an array of the names of the houses', assert => {
     assert.deepEqual(
         getHouseNames(houses), 
         ['Stark', 'Tyrell', 'Arryn', 'Lannister', 'Baratheon', 'Targaryen', 'Greyjoy']

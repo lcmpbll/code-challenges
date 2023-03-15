@@ -24,7 +24,11 @@ Write a function named getHouses that returns a new array containing the names o
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseNames = houses => {
-    // Solution code here...
+    let houseArray = [];
+    for(let house in houses){
+        houseArray.push(house);
+    }
+    return houseArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
