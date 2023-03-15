@@ -74,7 +74,13 @@ This function should take in the house data and a house name and return a the na
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseHead = (houses, houseToFind) => {
-    // Solution code here...
+    let leader = '';
+    Object.entries(houses).forEach(property => {
+        if(property[0] === houseToFind){
+            leader = property[1]['head'];
+        }
+    });
+    return leader;
 
 };
 

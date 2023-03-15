@@ -121,7 +121,7 @@ test('It should return an array of the houses and number of characters', assert 
     );
 });
 
-skip('It should return head for a house', assert => {
+test('It should return head for a house', assert => {
     assert.equal(
         getHouseHead(houses, 'Stark'),
         'Sansa'
