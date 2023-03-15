@@ -11,7 +11,13 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 export const count = (target, input) => {
-  // Solution code here...
+    const instances = input.reduce((acc, val) => {
+        let targets = [];
+        targets = val.filter(num => num === target);
+        acc += targets.length;
+        return acc;
+    }, 0);
+    return instances;
 };
 
 /* ------------------------------------------------------------------------------------------------
