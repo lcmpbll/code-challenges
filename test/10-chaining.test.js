@@ -32,7 +32,7 @@ test('It should work on empty arrays', assert => {
     assert.equal(count(5, []), 0);
 });
 
-skip('It should add all the numbers in the arrays', assert => {
+test('It should add all the numbers in the arrays', assert => {
     const arraysOfNumbers = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6]];
     assert.equal(totalSum(arraysOfNumbers), 66);
 });
