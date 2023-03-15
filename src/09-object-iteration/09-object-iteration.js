@@ -52,7 +52,15 @@ Write a function named getHousesWithSize that uses Object.entries to return a ne
 ------------------------------------------------------------------------------------------------ */
 
 export const getHouseSizes = houses => {
-    // Solution code here...
+    let houseSizeArray = [];
+    Object.entries(houses).forEach(property => {
+        let house = { 'house': null, members: 0 };
+        house.house = property[0];
+        house.members = property[1].characters.length;
+        houseSizeArray.push(house);
+    });
+    return houseSizeArray;
+    
 };
 
 /*------------------------------------------------------------------------------------------------

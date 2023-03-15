@@ -106,7 +106,7 @@ test('It should return an array of the words of all houses', assert => {
     );
 });
 
-skip('It should return an array of the houses and number of characters', assert => {
+test('It should return an array of the houses and number of characters', assert => {
     assert.deepEqual(
         getHouseSizes(houses), 
         [
