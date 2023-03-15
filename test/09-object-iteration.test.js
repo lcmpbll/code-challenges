@@ -138,7 +138,7 @@ test('It should return head for a house', assert => {
     );
 });
 
-skip('It should return the number of characters in all houses', assert => {
+test('It should return the number of characters in all houses', assert => {
     assert.equal(totalCharacters(houses), 36);
 });
 
