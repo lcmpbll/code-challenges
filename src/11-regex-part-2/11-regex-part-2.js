@@ -9,7 +9,10 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 export const validatePin = (pin) => {
-  // Solution code here...
+    const RegExp = /^(?:\d{4}$)/;
+    const test = RegExp.test(pin);
+    console.log(test, pin);
+    return test;
 };
 
 /* ------------------------------------------------------------------------------------------------
