@@ -32,7 +32,6 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 export const totalSum = (input) => {
     const arrayTotal = input.reduce((acc, val) => {
-        console.log(acc, 'acc');
         let currentTotal = 0;
         currentTotal = val.reduce((accum, num) => {
             accum += num;
@@ -59,12 +58,34 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 export const divisibleByFiveTwoToThePower = (input) => {
-    const divisible = input.forEach(array => array.filter(num => num % 5 !== 0));
-    const array = divisible.reduce((acc, val) => {
-        val.map(val => acc.push(Math.pow(val, 2)));
-        return acc;
+    const divisible = input.map(array => array.filter(num => num % 5 === 0));
+
+    if(divisible === undefined){
+        return undefined;
+    }
+    const answer = divisible.reduce((accumulator, value) => {
+        
+        
+        accumulator.push(value.map(val => 
+            
+            Math.pow(2, val)
+        ));
+       
+        return accumulator;
+        
     }, []);
-    return array;
+    
+    
+    // const array = divisible.reduce((acc, val) => {
+    //     val.map(val => acc.push(Math.pow(2, val)));
+    //     console.log(acc);
+        
+    //     return acc;
+        
+    // }, []);
+        
+
+    return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,7 +100,14 @@ For example, "Luke Skywalker and C-3PO".
 ------------------------------------------------------------------------------------------------ */
 
 export const findTallerThan = (minHeight, data) => {
-  // Solution code here...
+    const tallCharacters = Object.entries(data).reduce((acc, val) => {
+        if(val.height > minHeight){
+            acc += val.name;
+        }
+        return acc;
+    }, '');
+    return tallCharacters;
+    
 };
 
 

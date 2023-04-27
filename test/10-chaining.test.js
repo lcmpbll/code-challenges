@@ -37,7 +37,7 @@ test('It should add all the numbers in the arrays', assert => {
     assert.equal(totalSum(arraysOfNumbers), 66);
 });
 
-skip('It should return numbers divisible by five, then raise two to the power of the resulting numbers', assert => {
+test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', assert => {
     assert.deepEqual(
         divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]]), 
         [[1024, 1048576, 32], [32], [1024]]
