@@ -6,7 +6,7 @@ import {
     findShortestName
 } from '../src/10-chaining/10-chaining.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('10 Array Method Chaining');
 
@@ -110,7 +110,7 @@ const starWarsData = [{
     gender: 'female'
 }];
 
-skip('It should return only characters that are taller than specified value', assert => {
+test('It should return only characters that are taller than specified value', assert => {
     assert.equal(
         findTallerThan(165, starWarsData), 
         'Luke Skywalker and C-3PO and Darth Vader'
@@ -125,6 +125,6 @@ skip('It should return only characters that are taller than specified value', as
     );
 });
 
-skip('It should return the name of the shortest character', assert => {
+test('It should return the name of the shortest character', assert => {
     assert.deepEqual(findShortestName(starWarsData), 'R2-D2');
 });

@@ -65,29 +65,13 @@ export const divisibleByFiveTwoToThePower = (input) => {
     }
     const divisbileNumbers = divisible.map(array => array.filter(entries => typeof(entries) === 'number'));
     const answer = divisbileNumbers.reduce((accumulator, value) => {
-        
-        
         accumulator.push(value.map(val => 
-            
-               
-                
             Math.pow(2, val)
-                
-            
         ));
        
         return accumulator;
         
     }, []);
-    
-    
-    // const array = divisible.reduce((acc, val) => {
-    //     val.map(val => acc.push(Math.pow(2, val)));
-    //     console.log(acc);
-        
-    //     return acc;
-        
-    // }, []);
         
 
     return answer;
@@ -105,9 +89,18 @@ For example, "Luke Skywalker and C-3PO".
 ------------------------------------------------------------------------------------------------ */
 
 export const findTallerThan = (minHeight, data) => {
-    const tallCharacters = Object.entries(data).reduce((acc, val) => {
+    
+    let count = 0;
+    const tallCharacters = data.reduce((acc, val) => {
         if(val.height > minHeight){
-            acc += val.name;
+            
+            count += 1;
+            if(count > 1){
+                acc += ' and ' + val.name;
+            } else {
+                acc += val.name;
+                // acc += val.name;
+            }
         }
         return acc;
     }, '');
@@ -123,5 +116,11 @@ Write a function named findShortestName that, given the Star Wars data from Chal
 ------------------------------------------------------------------------------------------------ */
 
 export const findShortestName = (data) => {
-  // Solution code here...
+    let shortest = 1000;
+    let shortestCharacter = '';
+    data.map(character => {if(parseInt(character.height) < shortest){
+        shortest = parseInt(character.height);
+        shortestCharacter = character.name;
+    }});
+    return shortestCharacter;
 };
