@@ -59,16 +59,21 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 export const divisibleByFiveTwoToThePower = (input) => {
     const divisible = input.map(array => array.filter(num => num % 5 === 0));
-
+    
     if(divisible === undefined){
         return undefined;
     }
-    const answer = divisible.reduce((accumulator, value) => {
+    const divisbileNumbers = divisible.map(array => array.filter(entries => typeof(entries) === 'number'));
+    const answer = divisbileNumbers.reduce((accumulator, value) => {
         
         
         accumulator.push(value.map(val => 
             
+               
+                
             Math.pow(2, val)
+                
+            
         ));
        
         return accumulator;

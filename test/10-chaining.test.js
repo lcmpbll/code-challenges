@@ -51,7 +51,7 @@ test('It should return an empty array if none of the numbers are divisible by fi
     );
 });
 
-skip('It should return an empty array if the values are not numbers', assert => {
+test('It should return an empty array if the values are not numbers', assert => {
     assert.deepEqual(
         divisibleByFiveTwoToThePower([['one', 'two', 'five'], ['5', '10', '15'], [5]]), 
         [[], [], [32]]
